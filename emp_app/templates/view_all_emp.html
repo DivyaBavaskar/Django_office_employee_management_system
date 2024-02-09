@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Employee Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <style>
+            body {
+                background-color: darkslategray;
+                padding: 20px;
+                color: white;
+                text-shadow: #333;
+            }
+    
+            .container {
+                text-align: center;
+                margin-top: 30px;
+                
+            }
+    
+            h1 {
+                font-size: 2.5em;
+                margin-bottom: 20px;
+            }
+    
+            table {
+                width: 120%;
+                margin-bottom: 20px;
+                border-collapse: collapse;
+                background-color: white;
+                color: #333; /* Text color for table cells */
+            }
+    
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border: 1px solid #ddd;
+            }
+    
+            th {
+                background-color: #4CAF50; /* Header background color */
+                color: white;
+            }
+    
+            tbody tr:hover {
+                background-color: rgb(245, 245, 245); /* Hover background color for table rows */
+            }
+        </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>All Employee Details</h1>
+        <hr>
+        <table class="table" border="2px">
+            <thead>
+                <tr >
+                    <th scope="col" style="background-color: goldenrod;">Sr.no</th>
+                    <th scope="col" style="background-color: goldenrod;">First Name</th>
+                    <th scope="col" style="background-color: goldenrod;">Last Name</th>
+                    <th scope="col" style="background-color: goldenrod;">Salary</th>
+                    <th scope="col" style="background-color: goldenrod;">Bonus</th>
+                    <th scope="col" style="background-color: goldenrod;">Phone Number</th>
+                    <th scope="col" style="background-color: goldenrod;">Role</th>
+                    <th scope="col" style="background-color: goldenrod;" >Department</th>
+                    <th scope="col" style="background-color: goldenrod;">Location</th>
+                    <th scope="col" style="background-color: goldenrod;">Hiredate</th>
+
+                </tr>
+            </thead>
+            {% for emp in emps%}
+
+            <tbody class="table-group-divider">
+                <tr>
+                    <th scope="row"  style="background-color: goldenrod;">{{emp.id}}</th>
+                    <td>{{emp.first_name}}</td>
+                    <td>{{emp.last_name}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td>{{emp.bonus}}</td>
+                    <td>{{emp.phone}}</td>
+                    <td>{{emp.role.name}}</td>
+                    <td>{{emp.dep.name}}</td>
+                    <td>{{emp.dep.location}}</td>
+                    <td>{{emp.hire_date}}</td>
+                </tr>
+
+            </tbody>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
